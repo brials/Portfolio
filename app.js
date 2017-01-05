@@ -1,6 +1,7 @@
 'use strict'
-
+// global variables and constructors
 var projects = [];
+var projectView = {};
 
 function Project(options){
   this.name = options.name;
@@ -19,6 +20,7 @@ Project.prototype.toHtml = function(){
   return $newProject;
 }
 
+// function and method declerations.
 projArray.sort(function(nextObject, currentObject){
   return (new Date(nextObject.datePublished)) - (new Date(currentObject.datePublished));
 });
@@ -30,3 +32,23 @@ projArray.forEach(function(oneOfMyProjects){
 projects.forEach(function(project){
   $('.projects').append(project.toHtml());
 })
+
+projectView.handleNav = function(){
+  $('.nav-bar').on('click', function(e){
+    e.preventDefault();
+    console.log(event.target);
+    var $temp = $(this).attr('id');
+    console.log($temp);
+    if($temp === '#projectNav'){
+      $('.about_me').hide();
+      $('.projects').fadeIn();
+    }
+    if($temp === '#about_meNav'){
+      $('.projects').hide();
+      $('.about_me').fadeIn();
+    }
+  })
+}
+
+//function and method calls.
+projectView.handleNav();
