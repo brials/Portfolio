@@ -4,20 +4,16 @@ var projects = [];
 var projectView = {};
 
 function Project(options){
-  this.name = options.name;
-  this.img = 'pictures/' + options.name + '.jpg';
-  this.link = options.link;
-  this.description = options.description;
-  this.datePublished = options.datePublished;
+  for(var key in options){
+    this[key] = options[key];
+  }
 }
 
 Project.prototype.toHtml = function(){
-  var $newProject = $('article.template').clone();
-  $newProject.find('h1').text(this.name);
-  $newProject.find('p').text(this.description);
-  $newProject.find('img').attr('href', this.img);
-  $newProject.removeClass('template').addClass('appended')
-  return $newProject;
+  var source = $('#project-template').html();
+  var projectRender = Handlebars.compile(source);
+  var context = projects;
+  return projectRender(this);
 }
 
 // function and method declerations.
@@ -30,23 +26,15 @@ projArray.forEach(function(oneOfMyProjects){
 });
 
 projects.forEach(function(project){
-  $('.projects').append(project.toHtml());
+  $('#projects').append(project.toHtml());
 })
 
 projectView.handleNav = function(){
-  $('.nav-bar').on('click', function(e){
+  $('.aboutme')
+  $('.nav-bar').on('click', '.nav-list', function(e){
     e.preventDefault();
-    console.log(event.target);
-    var $temp = $(this).attr('id');
-    console.log($temp);
-    if($temp === '#projectNav'){
-      $('.about_me').hide();
-      $('.projects').fadeIn();
-    }
-    if($temp === '#about_meNav'){
-      $('.projects').hide();
-      $('.about_me').fadeIn();
-    }
+    $('.tab-content').hide();
+    $('#' + $(this).attr('data-content')).fadeIn();
   })
 }
 
