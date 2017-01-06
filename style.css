@@ -3,6 +3,11 @@ header{
     background-color: #13F2F3;
 }
 
+.project{
+  background-color: indigo;
+}
+/*Layout*/
+
 img{
   height: 40%;
   width: 40%;
@@ -18,7 +23,6 @@ clear: both;
 .template{
   display: none;
 }
-/*Layout*/
 header{
   position: fixed;
   top: 0px;
@@ -47,7 +51,6 @@ margin-bottom: 1em;
   clear: both;
   height: 300px;
   width: 100%;
-  background-color: indigo;
   text-align: center;
 }
 
