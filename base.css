@@ -1,0 +1,14 @@
+/*Base*/
+header{
+    background-color: #13F2F3;
+}
+
+.project{
+  background-color: indigo;
+}
+
+@media screen and (min-width: 760px){
+  .project{
+    background-color: red;
+  }
+}
