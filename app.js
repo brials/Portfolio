@@ -30,7 +30,7 @@ projects.forEach(function(project){
 })
 
 projectView.handleNav = function(){
-  $('.aboutme')
+  $('#about_me').hide()
   $('.nav-bar').on('click', '.nav-list', function(e){
     e.preventDefault();
     $('.tab-content').hide();

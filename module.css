@@ -1,1 +1,38 @@
-/*Module css design will go here. Still working on figuring out exactly what to sort into here.
+/*Module css design will go here. Still working on figuring out exactly what to sort into here.*/
+
+.nav-bar ul{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.nav-list{
+  display: inline;
+  width: 15%;
+  margin-right: 5%;
+}
+
+.project{
+  clear: both;
+  height: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.heroimage{
+  width: 100%;
+  height: 26em;
+}
+.heroimage img{
+  width: 100%;
+  height: 100%;
+}
+
+
+@media screen and (min-width: 760px){
+  .project{
+    background-color: red;
+    float: left;
+    clear: none;
+    width: 50%;
+  }
+}
