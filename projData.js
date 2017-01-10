@@ -1,6 +1,6 @@
 'use strict';
 
-var projArray = [
+var projArray = [ //eslint-disable-line
   {
     name: 'Matching Game',
     class: 'matchingGame',
