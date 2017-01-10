@@ -64,9 +64,9 @@ Project.fetchAll = function() {
         Project.loadAll(data);
         localStorage.setItem('rawData', JSON.stringify(data));
         console.log('this happened')
+        Project.initIndex();
       }
     })
-    Project.initIndex();
     console.log('happens');
   }
 }
