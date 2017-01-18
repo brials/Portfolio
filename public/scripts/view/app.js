@@ -2,7 +2,6 @@
 // global variables and constructors
 (function ProjectIife(module){ //eslint-disable-line
 
-  var projectView = {};
 
   function Project(options){
     for(var key in options){
@@ -27,11 +26,7 @@
     });
   }
 
-  projectView.wordCount = () => {
-    return Project.all.map(project => {
-      return project.description.split(' ').length;
-    }).reduce((current, next) => {return current + next}, 0);
-  }
+
 
   Project.initIndex = () => {
     Project.all.forEach(function(project){
@@ -39,14 +34,6 @@
     })
   }
 
-  projectView.handleNav = () => {
-    $('#about_me').hide()
-    $('.nav-bar').on('click', '.nav-list', function(e){
-      e.preventDefault();
-      $('.tab-content').hide();
-      $('#' + $(this).attr('data-content')).fadeIn();
-    })
-  }
 
   Project.fetchAll = function() {
     if (localStorage.rawData) {
@@ -67,9 +54,6 @@
     }
   }
   //function and method calls.
-  projectView.handleNav();
   Project.fetchAll();
-  $('#wordCount').text(projectView.wordCount());
-  module.projectView = projectView;
   module.Project = Project;
 })(window);
