@@ -4,7 +4,7 @@
   var projectView = {};
 
   projectView.wordCount = () => {
-    return Project.all
+    return Project.all  // eslint-disable-line
     .map(project => {return project.description.split(' ').length;})
     .reduce((current, next) => {return current + next}, 0);
   }
