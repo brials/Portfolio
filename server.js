@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 7000;
 
 app.use(express.static('./public'));
 
-app.get('/index.html', function(request, response) {
+app.get('*', function(request, response) {
 
   response.sendFile('index.html', {root: './public'});
 });
