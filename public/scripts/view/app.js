@@ -43,7 +43,7 @@
     } else {
       $.ajax({
         dataType: 'json',
-        url: 'projData.json',
+        url: '/scripts/model/projData.json',
         method: 'GET',
         success: function(data, method, xhr){ //eslint-disable-line
           Project.loadAll(data);
